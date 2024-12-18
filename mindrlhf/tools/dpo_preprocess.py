@@ -233,7 +233,7 @@ def preprocess(data_path: str, dst_file: str, config_path: str, tokenizer_path: 
             else:
                 labels = input_ids[:]
                 loss_mask = [0] * len(prompt_ids) + [1] * len(resp_ids)
-
+        
             input_len = len(input_ids)
             input_ids = input_ids + [tokenizer.pad_token_id] * (seq_len - input_len)
             labels = labels + [tokenizer.pad_token_id] * (seq_len - input_len)
@@ -272,6 +272,10 @@ def preprocess(data_path: str, dst_file: str, config_path: str, tokenizer_path: 
                                                batch_chosen_attention_mask, batch_chosen_loss_mask)
             batch_rejected_ref_logps = get_logps(model_name, model, batch_rejected_input_ids, batch_rejected_labels,
                                                  batch_rejected_attention_mask, batch_rejected_loss_mask)
+            
+            
+            
+            
             for i in range(config.model.model_config.batch_size):
                 sample = {
                     "chosen_input_ids": batch_chosen_input_ids[i],

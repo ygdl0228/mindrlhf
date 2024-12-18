@@ -28,6 +28,7 @@ from mindformers.models.tokenization_utils import PreTrainedTokenizer
 from mindformers.models.tokenization_utils_base import AddedToken
 from mindformers.tools.utils import check_file
 
+__all__ = ['Qwen2_5Tokenizer']
 
 VOCAB_FILES_NAMES = {
     "vocab_file": "vocab.json",
@@ -101,15 +102,15 @@ def bytes_to_unicode():
     tables between utf-8 bytes and unicode strings.
     """
     bs = (
-        list(range(ord("!"), ord("~") + 1)) + list(range(ord("¡"),
-                                                         ord("¬") + 1)) + list(range(ord("®"), ord("ÿ") + 1))
+            list(range(ord("!"), ord("~") + 1)) + list(range(ord("¡"),
+                                                             ord("¬") + 1)) + list(range(ord("®"), ord("ÿ") + 1))
     )
     cs = bs[:]
     n = 0
-    for b in range(2**8):
+    for b in range(2 ** 8):
         if b not in bs:
             bs.append(b)
-            cs.append(2**8 + n)
+            cs.append(2 ** 8 + n)
             n += 1
     cs = [chr(n) for n in cs]
     return dict(zip(bs, cs))
@@ -464,11 +465,11 @@ class Qwen2_5Tokenizer(PreTrainedTokenizer):
             return None
         vocab_file = os.path.join(
             save_directory, (filename_prefix + "-" if filename_prefix else "") +
-            VOCAB_FILES_NAMES["vocab_file"]
+                            VOCAB_FILES_NAMES["vocab_file"]
         )
         merge_file = os.path.join(
             save_directory, (filename_prefix + "-" if filename_prefix else "") +
-            VOCAB_FILES_NAMES["merges_file"]
+                            VOCAB_FILES_NAMES["merges_file"]
         )
 
         flags_ = os.O_WRONLY | os.O_CREAT | os.O_TRUNC

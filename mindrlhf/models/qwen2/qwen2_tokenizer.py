@@ -29,6 +29,8 @@ from mindformers.models.tokenization_utils import PreTrainedTokenizer
 from mindformers.models.tokenization_utils_base import AddedToken
 from mindformers.tools.utils import check_file
 
+__all__ = ['Qwen2Tokenizer']
+
 VOCAB_FILES_NAMES = {
     "vocab_file": "vocab.json",
     "merges_file": "merges.txt",

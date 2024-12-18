@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 # ============================================================================
-"""qwen1_5_7b_dpo models' APIs."""
+"""qwen2_5_7b_dpo models' APIs."""
 from typing import Optional
 import math
 import copy

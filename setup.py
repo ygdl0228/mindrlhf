@@ -135,10 +135,10 @@ if __name__ == '__main__':
         author='The MindSpore Authors',
         author_email='contact@mindspore.cn',
         url='https://www.mindspore.cn',
-        download_url='https://github.com/mindspore-lab/mindrlhf/tags',
+        download_url='https://gitee.com/mindspore/mindrlhf/tags',
         project_urls={
-            'Sources': 'https://github.com/mindspore-lab/mindrlhf',
-            'Issue Tracker': 'https://github.com/mindspore-lab/mindrlhf/issues',
+            'Sources': 'https://gitee.com/mindspore/mindrlhf',
+            'Issue Tracker': 'https://gitee.com/mindspore/mindrlhfissues',
         },
         description=get_description(),
         long_description_content_type="text/markdown",
