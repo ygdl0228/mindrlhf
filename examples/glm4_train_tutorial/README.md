@@ -62,9 +62,9 @@ bash examples/glm4_train_tutorial/run_glm4_rlhf.sh \
 path/to/model_configs/glm4_config/predict_glm4_9b_chat.yaml \
 path/to/model_configs/glm4_config/predict_glm4_9b_chat.yaml \
 path/to/model_configs/glm4_config/predict_glm4_9b_chat.yaml \
-path/to/model_configs/glm4_config/finetune_glm4_9b.yaml \
-path/to/model_configs/glm4_config/finetune_glm4_9b.yaml \
-path/to/model_configs/glm4_config/finetune_glm4_9b.yaml \
+path/to/model_configs/glm4_config/glm4_9b.yaml \
+path/to/model_configs/glm4_config/glm4_9b.yaml \
+path/to/model_configs/glm4_config/glm4_9b.yaml \
 path/to/ppo_data/ppo_data.mindrecord \
 path/to/cvalues_8192.mindrecord \
 False \

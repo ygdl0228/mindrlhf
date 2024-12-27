@@ -31,8 +31,9 @@ from mindrlhf.utils.configs import combine_config
 from mindrlhf.utils import transfer_from_str_to_bool, ckpt_transfer_for_two_stages
 
 
-def main(sft_path, reward_path, critic_path, use_parallel, args):
-
+def main(sft_path, reward_path, critic_path, use_parallel, enable_compile_cache, only_save_strategy,
+         load_sft_checkpoint, mind_dataset_dir, save_data_file, load_ref_checkpoint, load_rm_checkpoint,
+         load_critic_checkpoint):
     # init config with yaml
     sft_config = MindFormerConfig(sft_path)
     use_parallel = transfer_from_str_to_bool(use_parallel)
@@ -137,5 +138,6 @@ if __name__ == "__main__":
     parser.add_argument('--enable_compile_cache', type=str, default=False, help='enable compile cache')
     parser.add_argument('--only_save_strategy', type=str, default=False, help='only save strategy')
     args = parser.parse_args()
-    main(args.sft_path, args.reward_path, args.critic_path, args.use_parallel, args)
-
+    main(args.sft_path, args.reward_path, args.critic_path, args.use_parallel, args.enable_compile_cache,
+         args.only_save_strategy, args.load_sft_checkpoint, args.mind_dataset_dir, args.save_data_file,
+         args.load_ref_checkpoint, args.load_rm_checkpoint, args.load_critic_checkpoint)
